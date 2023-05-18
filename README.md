@@ -16,11 +16,11 @@ Table of Contents
 -License
 -Contact
 
-Overview
+1.Overview
  The e-commerce platform is composed of the following microservices:
-1- User Microservice: Manages user accounts, including CRUD (Create, Read, Update, Delete) operations for user profiles.
-2- Product Microservice: Handles product management, including CRUD operations for product listings.
-3- Cart Microservice: Manages shopping carts, allowing users to add products to their cart and retrieve cart items.
+1. User Microservice: Manages user accounts, including CRUD (Create, Read, Update, Delete) operations for user profiles.
+2. Product Microservice: Handles product management, including CRUD operations for product listings.
+3. Cart Microservice: Manages shopping carts, allowing users to add products to their cart and retrieve cart items.
 
 Technologies
 -gRPC: Used for efficient communication between microservices.
