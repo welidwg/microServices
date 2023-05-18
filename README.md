@@ -6,9 +6,9 @@ This project is an e-commerce platform consisting of three microservices: User, 
 
 Table of Contents
 
--Overview
++Overview
 
--Technologies
++Technologies
 
 -Getting Started
 
