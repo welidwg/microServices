@@ -7,13 +7,21 @@ This project is an e-commerce platform consisting of three microservices: User, 
 Table of Contents
 
 -Overview
+
 -Technologies
+
 -Getting Started
+
 -Prerequisites
+
 -Installation
+
 -Usage
+
 -Contributing
+
 -License
+
 -Contact
 
 1.Overview
