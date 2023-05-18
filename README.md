@@ -1,6 +1,11 @@
 Project Title: Microservices E-commerce Platform
+
 This project is an e-commerce platform consisting of three microservices: User, Product, and Cart. The platform is designed to manage users, products, and shopping carts using gRPC, GraphQL, and RESTful APIs.
+
+
+
 Table of Contents
+
 -Overview
 -Technologies
 -Getting Started
