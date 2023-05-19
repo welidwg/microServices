@@ -46,14 +46,14 @@ const clientCart = new cartProto.CartService(
 );
 
 //user
-app.post("/user/create", (req, res) => {
+app.post("/api/user/create", (req, res) => {
   const data = req.body;
   clientUser.createUser(data, (err, response) => {
     if (err) return res.status(500).send(err);
     res.json(response.user);
   });
 });
-app.delete("/user/:id", (req, res) => {
+app.delete("/api/user/:id", (req, res) => {
   const id = req.params.id;
   clientUser.deleteUser({ id: id }, (err, response) => {
     if (err) return res.status(500).send(err);
@@ -61,14 +61,14 @@ app.delete("/user/:id", (req, res) => {
   });
 });
 
-app.get("/user/:id", (req, res) => {
+app.get("/api/user/:id", (req, res) => {
   const user_id = req.params.id;
   clientUser.getUser({ user_id: user_id }, (err, response) => {
     if (err) return res.status(500).send(err);
     res.json(response.user);
   });
 });
-app.put("/user/update", (req, res) => {
+app.put("/api/user/update", (req, res) => {
   const user = req.body;
   clientUser.updateUser({ user: user }, (err, response) => {
     if (err) return res.status(500).send(err);
@@ -76,7 +76,7 @@ app.put("/user/update", (req, res) => {
   });
 });
 
-app.get("/users/search", (req, res) => {
+app.get("/api/users/search", (req, res) => {
   const { cin } = req.body;
   clientUser.searchUser({ cin: cin }, (err, response) => {
     if (err) return res.status(500).send(err);
@@ -86,22 +86,25 @@ app.get("/users/search", (req, res) => {
 });
 
 //carts
-app.post("/cart/add", (req, res) => {
+app.post("/api/cart/add", (req, res) => {
   const data = req.body;
   clientCart.addToCart(data, (err, response) => {
     if (err) return res.status(500).send(err);
     res.json(response.cart);
   });
 });
-app.get("/cart/:user_id", (req, res) => {
+app.get("/api/cart/:user_id", (req, res) => {
   const user_id = req.params.user_id;
   clientCart.getCart({ user_id: user_id }, (err, response) => {
     if (err) return res.status(500).send(err);
     res.json(response.cart);
   });
 });
+app.get("/api/test", (req, res) => {
+  res.json({ message: "hello" });
+});
 
-const port = 3000;
+const port = 3001;
 app.listen(port, () => {
   console.log(`API Gateway running on port ${port}`);
 });
