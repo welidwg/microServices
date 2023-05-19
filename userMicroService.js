@@ -5,12 +5,7 @@ const bcrypt = require("bcrypt");
 let saltRounds = 10;
 const salt = bcrypt.genSaltSync(saltRounds);
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "aos",
-});
+
 
 connection.connect((err) => {
   if (err) throw err;
