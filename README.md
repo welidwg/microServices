@@ -37,7 +37,7 @@ This project is an e-commerce platform consisting of three microservices: User, 
 
  1. Clone the repository:
      ```bash
-    git clone https://github.com/yourusername/microservices-ecommerce-platform.git
+    git clone https://github.com/welidwg/microServices.git
       ```
  
  2. Navigate to the project directory.
