@@ -92,10 +92,10 @@ const userService = {
   updateUser: (call, callback) => {
     const user = call.request.user;
 
-    const query = `UPDATE users SET nom = ? , prenom = ? , genre = ? , cin = ? where id = ?`;
+    const query = `UPDATE users SET nom = ? , prenom = ? , email = ? , genre = ? , cin = ? where id = ?`;
     connection.query(
       query,
-      [user.nom, user.prenom, user.genre, user.cin, user.id],
+      [user.nom, user.prenom, user.email, user.genre, user.cin, user.id],
       (err, results) => {
         if (err) {
           return callback(err);
@@ -106,14 +106,17 @@ const userService = {
   },
 
   createUser: (call, callback) => {
-    const { nom, prenom, cin, password, genre } = call.request;
+    const { nom, prenom, cin, email, password, genre } = call.request;
     const hash = bcrypt.hashSync(password, salt);
+    console.log("====================================");
+    console.log(call.request);
+    console.log("====================================");
 
     const query =
-      "INSERT INTO users (nom, prenom,cin,password,genre) VALUES (?,?,?,?,?)";
+      "INSERT INTO users (nom, prenom,email,cin,password,genre) VALUES (?,?,?,?,?,?)";
     connection.query(
       query,
-      [nom, prenom, cin, hash, genre],
+      [nom, prenom, email, cin, hash, genre],
       (error, results) => {
         if (error) {
           console.error(error);
@@ -125,6 +128,7 @@ const userService = {
           id: results.insertId,
           nom: nom,
           prenom: prenom,
+          email: email,
           genre: genre,
           password: hash,
           cin: cin,

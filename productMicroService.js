@@ -1,6 +1,7 @@
 const grpc = require("@grpc/grpc-js");
 const protoLoader = require("@grpc/proto-loader");
 const mysql = require("mysql");
+
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",

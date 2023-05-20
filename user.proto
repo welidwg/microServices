@@ -5,9 +5,10 @@ message User{
 int32 id=1;
 string nom=2;
 string prenom=3;
-int32 cin=4;
-string genre=5;
-string password=6;
+string email=4;
+int32 cin=5;
+string genre=6;
+string password=7;
 }
 
 
@@ -50,9 +51,10 @@ message UpdateUserResponse{
 message CreateUserRequest{
 string nom=1;
 string prenom=2;
-int32 cin=3;
-string genre=4;
-string password=5;
+string email=3;
+int32 cin=4;
+string genre=5;
+string password=6;
 }
 
 message CreateUserResponse{
