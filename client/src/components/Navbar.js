@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { is_Auth, user } from "../constants";
 
 export default function Navbar(props) {
   return (
@@ -13,15 +14,18 @@ export default function Navbar(props) {
             Home
           </NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink
-            to={"/addproduct"}
-            className="nav-link "
-            aria-current="page"
-          >
-            Add Product
-          </NavLink>
-        </li>
+        {is_Auth ?? user.role == 0 ?? (
+          <li className="nav-item">
+            <NavLink
+              to={"/addproduct"}
+              className="nav-link "
+              aria-current="page"
+            >
+              Add Product
+            </NavLink>
+          </li>
+        )}
+
         <li>
           <a href="#" className="nav-link text-white">
             <svg className="bi me-2" width="16" height="16"></svg>

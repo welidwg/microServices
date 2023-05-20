@@ -12,6 +12,8 @@ const app = express();
 app.use(bodyParser.json());
 const resolvers = require("./resolversGraphQL");
 const typeDefs = require("./schemaGraphQL");
+const { authenticate } = require("passport");
+const authentication = require("./authentication");
 const server = new ApolloServer({ typeDefs, resolvers });
 
 server.start().then(() => {
@@ -53,15 +55,24 @@ app.post("/api/user/create", (req, res) => {
     res.json(response.user);
   });
 });
-app.delete("/api/user/:id", (req, res) => {
+app.post("/api/login", (req, res) => {
+  const data = req.body;
+
+  clientUser.authUser(data, (err, response) => {
+    if (err) return res.status(500).send(err);
+    res.json(response);
+  });
+});
+app.delete("/api/user/:id", authentication, (req, res) => {
   const id = req.params.id;
+
   clientUser.deleteUser({ id: id }, (err, response) => {
     if (err) return res.status(500).send(err);
     res.json(response.res);
   });
 });
 
-app.get("/api/user/:id", (req, res) => {
+app.get("/api/user/:id", authentication, (req, res) => {
   const user_id = req.params.id;
   clientUser.getUser({ user_id: user_id }, (err, response) => {
     if (err) return res.status(500).send(err);

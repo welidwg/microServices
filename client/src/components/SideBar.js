@@ -1,11 +1,17 @@
 import { NavLink } from "react-router-dom";
+import { is_Auth, user } from "../constants";
 
 export default function SideBar(props) {
+  function Logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.location.href = "/";
+  }
   return (
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
+    <nav className="navbar navbar-expand-lg bg-light">
+      <div className="container-fluid">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -13,32 +19,52 @@ export default function SideBar(props) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            {/* <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            {/* <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="#">
                 Home
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Link
               </a>
             </li> */}
           </ul>
-          <div className="">
-            <a className="btn  mx-2 btn-primary border-0 rounded-4   shadow-sm text-light ">
-              Login
-            </a>
-            <NavLink
-              to={"/signup"}
-              className="btn  btn-primary border-0 rounded-4   shadow-sm text-light "
-            >
-              Sign up
-            </NavLink>
-          </div>
+          {!is_Auth ? (
+            <div className="">
+              <NavLink
+                to={"/login"}
+                className="btn  mx-2 btn-primary border-0 rounded-4   shadow-sm text-light "
+              >
+                Login
+              </NavLink>
+              <NavLink
+                to={"/signup"}
+                className="btn  btn-primary border-0 rounded-4   shadow-sm text-light "
+              >
+                Sign up
+              </NavLink>
+            </div>
+          ) : (
+            <div className=" d-flex align-items-center justify-content-around">
+              <NavLink
+                to={"/profile"}
+                className="mx-2 fw-bold btn  rounded-3 shadow"
+              >
+                {user.nom} {user.prenom} {user.role == 0 ?? " | Admin"}
+              </NavLink>
+              <a
+                onClick={Logout}
+                className="btn  btn-primary border-0 rounded-4   shadow-sm text-light "
+              >
+                Logout
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </nav>

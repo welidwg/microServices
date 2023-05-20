@@ -4,6 +4,7 @@ const mysql = require("mysql");
 const bcrypt = require("bcrypt");
 let saltRounds = 10;
 const salt = bcrypt.genSaltSync(saltRounds);
+const jwt = require("jsonwebtoken");
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -104,13 +105,39 @@ const userService = {
       }
     );
   },
+  authUser: (call, callback) => {
+    const { email, password } = call.request;
+    const query = "SELECT * from users where email = ?";
+    connection.query(query, [email], (error, results) => {
+      if (error) {
+        console.error(error);
+        callback(error);
+        return;
+      }
+      if (results.length == 0) {
+        callback({ message: "user not found" });
+        return;
+      }
+      const user = results[0];
+      bcrypt.compare(password, user.password, (err, result) => {
+        if (err) {
+          callback(err);
+        } else if (result) {
+          const token = jwt.sign({ id: user.id }, "secret", {
+            expiresIn: "2h",
+          });
+
+          callback(null, { user: user, token: token });
+        } else {
+          callback({ message: "password dont match" });
+        }
+      });
+    });
+  },
 
   createUser: (call, callback) => {
     const { nom, prenom, cin, email, password, genre } = call.request;
     const hash = bcrypt.hashSync(password, salt);
-    console.log("====================================");
-    console.log(call.request);
-    console.log("====================================");
 
     const query =
       "INSERT INTO users (nom, prenom,email,cin,password,genre) VALUES (?,?,?,?,?,?)";
