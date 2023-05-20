@@ -3,7 +3,8 @@ import { useState } from "react";
 import { ProductsQuery } from "../Graphql/queries";
 
 export default function Home(props) {
-  const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null);
+    
   const TestQuery = useQuery(ProductsQuery, {
     pollInterval: 10000,
     onCompleted: (res) => {},
@@ -36,7 +37,7 @@ export default function Home(props) {
                   <h5 className="card-title">{e.title}</h5>
                   <p className="card-text">{e.description}</p>
                   <a href="#" className="btn btn-primary">
-                    Buy Now
+                    <i className="fas fa-cart-plus"></i>
                   </a>
                 </div>
                 <div className="card-footer">
