@@ -1,11 +1,13 @@
-import { useQuery } from "@apollo/client";
 import { useState } from "react";
+import { useQuery } from "@apollo/client";
 import { ProductsQuery } from "../Graphql/queries";
 
 export default function Home(props) {
   const TestQuery = useQuery(ProductsQuery, {
     pollInterval: 10000,
-    onCompleted: (res) => {},
+      onCompleted: (res) => {
+        
+    },
     onError: (err) => {
       console.log("====================================");
       console.log(err.message);
@@ -13,7 +15,7 @@ export default function Home(props) {
     },
   });
 
-  return (
+    return (
     <div className="row">
       {TestQuery.loading ? (
         <span>loading</span>

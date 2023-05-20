@@ -10,9 +10,7 @@ export default function AddProduct(props) {
     description: "",
     price: 0,
   });
-  const [create_prod, Rslt] = useMutation(AddPorductMutation, {
-    variables: product,
-  });
+  const [create_prod] = useMutation(AddPorductMutation);
 
   function handleChange(e) {
     if (e.target.name == "price") {
@@ -27,6 +25,7 @@ export default function AddProduct(props) {
   function handleSubmit(e) {
     e.preventDefault();
     create_prod({
+      variables: product,
       onCompleted: (res) => {
         Swal.fire("Success", "Successfully created ", "success");
         e.target.reset();

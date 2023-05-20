@@ -126,7 +126,6 @@ const userService = {
           const token = jwt.sign({ id: user.id }, "secret", {
             expiresIn: "2h",
           });
-
           callback(null, { user: user, token: token });
         } else {
           callback({ message: "password dont match" });

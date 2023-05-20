@@ -19,7 +19,7 @@ message AuthUserRequest{
 }
 message AuthUserResponse{
     User user=1;
-    string  token=2;
+    string token=2;
 }
 
 message GetUserRequest{
@@ -64,8 +64,8 @@ message CreateUserResponse{
 }
 
 
-service UserService{
-rpc AuthUser (AuthUserRequest) returns (AuthUserResponse);
+service UserService {
+rpc AuthUser(AuthUserRequest) returns (AuthUserResponse);
 rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
 rpc GetUser(GetUserRequest) returns (GetUserResponse);
 rpc SearchUser(SearchUserRequest) returns (SearchUserResponse);

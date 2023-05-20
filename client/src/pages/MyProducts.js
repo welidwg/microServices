@@ -9,6 +9,7 @@ import Input from "../components/form/Input";
 export default function MyProducts(props) {
   const [data, setData] = useState(null);
   const [delete_prod] = useMutation(DeleteProductMutation);
+  const [updated, setUpdatedData] = useState(null);
   const ProductssQuery = useQuery(ProductsQuery, {
     pollInterval: 10000,
     onCompleted: (res) => {},
@@ -84,7 +85,6 @@ export default function MyProducts(props) {
                         DeleteProductHandler(e.id);
                       }}
                     >
-                      {" "}
                       <i className="fas fa-trash text-danger"></i>
                     </button>
                   </td>
