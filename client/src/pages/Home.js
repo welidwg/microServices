@@ -3,8 +3,6 @@ import { useState } from "react";
 import { ProductsQuery } from "../Graphql/queries";
 
 export default function Home(props) {
-    const [user, setUser] = useState(null);
-    
   const TestQuery = useQuery(ProductsQuery, {
     pollInterval: 10000,
     onCompleted: (res) => {},
@@ -14,6 +12,7 @@ export default function Home(props) {
       console.log("====================================");
     },
   });
+
   return (
     <div className="row">
       {TestQuery.loading ? (

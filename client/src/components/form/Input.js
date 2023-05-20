@@ -6,6 +6,7 @@ export default function Input({
   type,
   onChange,
   required,
+  value,
 }) {
   return (
     <div class="input-group mb-3">
@@ -20,6 +21,7 @@ export default function Input({
         name={name}
         onChange={(e) => onChange(e)}
         required={required}
+        defaultValue={value}
       />
     </div>
   );

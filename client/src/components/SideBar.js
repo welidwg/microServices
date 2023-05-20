@@ -51,18 +51,19 @@ export default function SideBar(props) {
             </div>
           ) : (
             <div className=" d-flex align-items-center justify-content-around">
-              <NavLink
-                to={"/profile"}
+              <button
                 className="mx-2 fw-bold btn  rounded-3 shadow"
+                data-bs-toggle="offcanvas"
+                href="#profileOffCanvas"
               >
                 {user.nom} {user.prenom} {user.role == 0 ?? " | Admin"}
-              </NavLink>
-              <a
+              </button>
+              <button
                 onClick={Logout}
                 className="btn  btn-primary border-0 rounded-4   shadow-sm text-light "
               >
                 Logout
-              </a>
+              </button>
             </div>
           )}
         </div>

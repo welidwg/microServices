@@ -25,15 +25,26 @@ export default function Navbar(props) {
           </NavLink>
         </li>
         {is_Auth && user.role == 0 ? (
-          <li className="nav-item ">
-            <NavLink
-              to={"/addproduct"}
-              className="nav-link btn text-start text-light "
-              aria-current="page"
-            >
-              Add Product
-            </NavLink>
-          </li>
+          <>
+            <li className="nav-item ">
+              <NavLink
+                to={"/products"}
+                className="nav-link btn text-start text-light "
+                aria-current="page"
+              >
+               Products list
+              </NavLink>
+            </li>
+            <li className="nav-item ">
+              <NavLink
+                to={"/addproduct"}
+                className="nav-link btn text-start text-light "
+                aria-current="page"
+              >
+                Add Product
+              </NavLink>
+            </li>
+          </>
         ) : (
           ""
         )}

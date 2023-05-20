@@ -7,3 +7,8 @@ export const AddPorductMutation = gql`
     }
   }
 `;
+export const DeleteProductMutation = gql`
+  mutation DeleteProduct($id: Int!) {
+    deleteProduct(id: $id)
+  }
+`;
