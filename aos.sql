@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 21 mai 2023 à 00:55
+-- Généré le : dim. 21 mai 2023 à 12:38
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -65,10 +65,10 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `description`, `price`) VALUES
-(2, 'Watch', 'watch rolex', 1000),
-(3, 'Iphone', 'iphone 11 pro batter ystate 90%', 10.3),
+(2, 'Watch', 'watch rolex ', 1000),
+(3, 'Iphone', 'iphone 11 pro battery state 90%', 10.3),
 (6, 'Monitor', 'reddragon screen', 22),
-(11, 'Laptop ', 'laptop hp RTX 3050', 2000);
+(11, 'Laptop ', 'laptop hp RTX 3060', 2500);
 
 -- --------------------------------------------------------
 
@@ -97,10 +97,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `cin`, `password`, `genre`, `role`) VALUES
 (11, 'waliid', 'wg', 'wg@gmail.com', 14007649, '$2b$10$5DFc3MHaK2gIYQagMF8k2OTNN9YKpuZeXYGw6fklDzukIg8Yka89S', 'homme', 1),
-(16, 'Welid', 'wg', 'walidgueddari1899@gmail.com', 11223344, '$2b$10$JMIDAP4yugjuPFc5fJpju.fC0PB8jFd9h1K6a9SunyKfnY36reQX2', 'male', 0),
+(16, 'Welid', 'wg', 'test@gmail.com', 11223344, '$2b$10$JMIDAP4yugjuPFc5fJpju.fC0PB8jFd9h1K6a9SunyKfnY36reQX2', 'male', 0),
 (17, 'Welid', 'wg', 'wago@live.fr', 111111111, '$2b$10$OFLo.z0N1l9K1D.mzBD68.3oppDEifOkeE7vnVEt10EfEavP6BUHa', 'male', 1),
 (18, 'asma', 'asma', 'welid.wg@outlook.com', 333333, '$2b$10$srfLgEfOVRDms6JCmDyL9eF6Wtd./koeqlA0o83LZ7MjtMOOTe20C', 'female', 1),
-(19, 'sss', 'zzz', 'tes@gmail.com', 111111, '$2b$10$iQyzBcOSHg5QXJHbmk/UnO1EiV43KcK9BT86.sEr3iZAYONEBBlqy', 'male', 1),
 (20, 'ahmed ', 'ben ali', 'walid.gueddari@polytechnicien.tn', 12123232, '$2b$10$FwgGihPzhGSqRhQYKlkTF.7f2/03Psr3GLFpxq.1cjoVGJObvSbEO', 'male', 1);
 
 --
