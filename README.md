@@ -75,7 +75,7 @@ The e-commerce platform is composed of the following microservices:
     2.  Install the required dependencies:
 
         ```bash
-          npm install
+        npm install
 
         ```
 
