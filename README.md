@@ -48,13 +48,13 @@ The e-commerce platform is composed of the following microservices:
     ```bash
     npm install
     ```
-4.  Start each microservice:
+4.  Start all microservice:
 
     ```bash
     concurrently "nodemon gateway.js" "nodemon userMicroService.js" "nodemon productMicroService.js" "nodemon cartMicroService.js"
     ```
 
-    ```bash
+    <!-- ```bash
     nodemon .\cartMicroService.js
     ```
 
@@ -64,7 +64,7 @@ The e-commerce platform is composed of the following microservices:
 
     ```bash
     nodemon .\userMicroService.js
-    ```
+    ``` -->
 
     Now , to run the user interface , follow these steps :
 
