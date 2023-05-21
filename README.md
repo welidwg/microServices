@@ -51,7 +51,7 @@ The e-commerce platform is composed of the following microservices:
 4.  Start each microservice:
 
     ```bash
-    nodemon .\gateway.js
+    concurrently "nodemon gateway.js" "nodemon userMicroService.js" "nodemon productMicroService.js" "nodemon cartMicroService.js"
     ```
 
     ```bash
