@@ -6,13 +6,12 @@ const grpc = require("@grpc/grpc-js");
 const protoLoader = require("@grpc/proto-loader");
 const { ApolloServer } = require("@apollo/server");
 
-const userProtoPath = "user.proto";
-const cartProtoPath = "cart.proto";
+const userProtoPath = "./proto/user.proto";
+const cartProtoPath = "./proto/cart.proto";
 const app = express();
 app.use(bodyParser.json());
 const resolvers = require("./resolversGraphQL");
 const typeDefs = require("./schemaGraphQL");
-const { authenticate } = require("passport");
 const authentication = require("./authentication");
 const server = new ApolloServer({ typeDefs, resolvers });
 

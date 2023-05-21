@@ -1,7 +1,7 @@
 const grpc = require("@grpc/grpc-js");
 const protoLoader = require("@grpc/proto-loader");
 const { response } = require("express");
-const productProtoPath = "product.proto";
+const productProtoPath = "proto/product.proto";
 const mysql = require("mysql");
 const connection = mysql.createConnection({
   host: "localhost",

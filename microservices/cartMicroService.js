@@ -12,7 +12,7 @@ connection.connect((err) => {
   console.log("Connected to database");
 });
 
-const cartProtoPath = "cart.proto";
+const cartProtoPath = "proto/cart.proto";
 const cartProtoDefinition = protoLoader.loadSync(cartProtoPath, {
   keepCase: true,
   longs: String,

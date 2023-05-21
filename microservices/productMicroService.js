@@ -14,7 +14,7 @@ connection.connect((err) => {
   console.log("Connected to database");
 });
 
-const productProtoPath = "product.proto";
+const productProtoPath = "proto/product.proto";
 const productProtoDefinition = protoLoader.loadSync(productProtoPath, {
   keepCase: true,
   longs: String,

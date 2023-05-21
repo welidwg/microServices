@@ -53,7 +53,7 @@ The e-commerce platform is composed of the following microservices:
 5.  Start all microservice:
 
     ```bash
-    concurrently "nodemon gateway.js" "nodemon userMicroService.js" "nodemon productMicroService.js" "nodemon cartMicroService.js"
+    concurrently "nodemon gateway.js" "nodemon microservices/userMicroService.js" "nodemon microservices/productMicroService.js" "nodemon microservices/cartMicroService.js"
     ```
 
     <!-- ```bash
@@ -94,9 +94,9 @@ The e-commerce platform is composed of the following microservices:
 
 - Interact with the User, Product, and Cart microservices using their respective gRPC, GraphQL, or RESTful API endpoints.
 - Use the provided API documentation to understand the available endpoints and their usage.
-- here is the admin credentials for the test : 
-    + email : test@gmail.com
-    + password : 11223344
+- here is the admin credentials for the test :
+  - email : test@gmail.com
+  - password : 11223344
 
 ## Contributing
 
