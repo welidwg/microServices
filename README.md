@@ -34,6 +34,7 @@ The e-commerce platform is composed of the following microservices:
   - Ensure you have the following software installed on your local machine:
   - Node.js (version 12 or higher)
   - npm (version 6 or higher)
+  - local server (wamp,Xampp,..)
 
 ## Installation
 
