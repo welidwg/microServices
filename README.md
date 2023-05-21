@@ -68,27 +68,28 @@ The e-commerce platform is composed of the following microservices:
 
     Now , to run the user interface , follow these steps :
 
-    1.  Go to client folder :
-        ```bash
-        cd client
-        ```
-    2.  Install the required dependencies:
+    1. First , don't forget to import the database file "aos.sql" into your local server (Wamp,Xampp) phpmyadmin.
 
-        ```bash
-        npm install
+    2. Go to client folder :
+       ```bash
+       cd client
+       ```
+    3. Install the required dependencies:
 
-        ```
+       ```bash
+       npm install
 
-    3.  Start the react app :
+       ```
 
-        ```bash
-        npm start
+    4. Start the react app :
 
-        ```
+       ```bash
+       npm start
+
+       ```
 
 ## Usage
 
-- First , don't forget to import the database file "aos.sql" into your local server (Wamp,Xampp) phpmyadmin.
 - Interact with the User, Product, and Cart microservices using their respective gRPC, GraphQL, or RESTful API endpoints.
 - Use the provided API documentation to understand the available endpoints and their usage.
 
