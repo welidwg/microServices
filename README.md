@@ -70,13 +70,11 @@ The e-commerce platform is composed of the following microservices:
         ````bash
           npm install
               ```
-
         ````
     3.  Start the react app :
         ````bash
         npm start
             ```
-
         ````
 
 ## Usage
