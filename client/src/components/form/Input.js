@@ -9,13 +9,13 @@ export default function Input({
   value,
 }) {
   return (
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">
+    <div className="input-group mb-3">
+      <span className="input-group-text" id="basic-addon1">
         <i className={icon}></i>
       </span>
       <input
         type={type}
-        class="form-control"
+        className="form-control"
         placeholder={placeholder}
         id={id}
         name={name}

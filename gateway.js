@@ -79,7 +79,7 @@ app.get("/api/user/:id", authentication, (req, res) => {
     res.json(response.user);
   });
 });
-app.put("/api/user/update", (req, res) => {
+app.put("/api/user/update", authentication, (req, res) => {
   const user = req.body;
   clientUser.updateUser({ user: user }, (err, response) => {
     if (err) return res.status(500).send(err);

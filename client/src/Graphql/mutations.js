@@ -12,3 +12,18 @@ export const DeleteProductMutation = gql`
     deleteProduct(id: $id)
   }
 `;
+export const UpdateProductMutation = gql`
+  mutation UpdateProduct(
+    $id: Int!
+    $title: String!
+    $description: String!
+    $price: Float!
+  ) {
+    updateProduct(
+      id: $id
+      title: $title
+      description: $description
+      price: $price
+    ){title}
+  }
+`;

@@ -1,15 +1,11 @@
 import { useMutation, useQuery } from "@apollo/client";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { ProductsQuery } from "../Graphql/queries";
 import { DeleteProductMutation } from "../Graphql/mutations";
 import Swal from "sweetalert2";
-import Input from "../components/form/Input";
+import EditProduct from "./EditProduct";
 
 export default function MyProducts(props) {
-  const [data, setData] = useState(null);
   const [delete_prod] = useMutation(DeleteProductMutation);
-  const [updated, setUpdatedData] = useState(null);
   const ProductssQuery = useQuery(ProductsQuery, {
     pollInterval: 10000,
     onCompleted: (res) => {},
@@ -19,6 +15,7 @@ export default function MyProducts(props) {
       console.log("====================================");
     },
   });
+
   function DeleteProductHandler(id) {
     Swal.fire({
       title: "Are you sure?",
@@ -47,7 +44,7 @@ export default function MyProducts(props) {
   return (
     <>
       <h3 className="p-3">Porducts list</h3>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -98,49 +95,7 @@ export default function MyProducts(props) {
         <></>
       ) : (
         ProductssQuery.data.products.map((e, index) => {
-          return (
-            <div
-              class="offcanvas offcanvas-start"
-              tabindex="-1"
-              id={`productOffCanvas${e.id}`}
-              aria-labelledby="offcanvasExampleLabel"
-            >
-              <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="">
-                  Edit product
-                </h2>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="offcanvas-body">
-                <form>
-                  <Input
-                    type={"text"}
-                    name={"title"}
-                    icon={"fas fa-cube"}
-                    value={e.title}
-                  />
-                  <Input
-                    type={"text"}
-                    name={"description"}
-                    icon={"fas fa-info"}
-                    value={e.description}
-                  />
-                  <Input
-                    type={"number"}
-                    name={"price"}
-                    icon={"fas fa-money-bill-alt"}
-                    value={e.price}
-                  />
-                  <button className="btn btn-success">Save</button>
-                </form>
-              </div>
-            </div>
-          );
+          return <EditProduct key={index} product={e} query={ProductssQuery} />;
         })
       )}
     </>
