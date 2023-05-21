@@ -94,6 +94,9 @@ The e-commerce platform is composed of the following microservices:
 
 - Interact with the User, Product, and Cart microservices using their respective gRPC, GraphQL, or RESTful API endpoints.
 - Use the provided API documentation to understand the available endpoints and their usage.
+- here is the admin credentials for the test : 
+    + email : test@gmail.com
+    + password : 11223344
 
 ## Contributing
 
