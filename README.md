@@ -49,33 +49,42 @@ The e-commerce platform is composed of the following microservices:
     npm install
     ```
 4.  Start each microservice:
+
     ```bash
     nodemon .\gateway.js
     ```
+
     ```bash
     nodemon .\cartMicroService.js
     ```
+
     ```bash
     nodemon  .\productMicroService.js
     ```
+
     ```bash
     nodemon .\userMicroService.js
     ```
+
     Now , to run the user interface , follow these steps :
+
     1.  Go to client folder :
         ```bash
         cd client
         ```
     2.  Install the required dependencies:
-        ````bash
+
+        ```bash
           npm install
-              ```
-        ````
+
+        ```
+
     3.  Start the react app :
-        ````bash
+
+        ```bash
         npm start
-            ```
-        ````
+
+        ```
 
 ## Usage
 
