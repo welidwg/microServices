@@ -43,12 +43,13 @@ The e-commerce platform is composed of the following microservices:
     git clone https://github.com/welidwg/microServices.git
     ```
 
-2.  Navigate to the project directory.
-3.  Install the required dependencies for each microservice:
+2.  Import the database file "aos.sql" into your local server (Wamp,Xampp) phpmyadmin.
+3.  Navigate to the project directory.
+4.  Install the required dependencies for each microservice:
     ```bash
     npm install
     ```
-4.  Start all microservice:
+5.  Start all microservice:
 
     ```bash
     concurrently "nodemon gateway.js" "nodemon userMicroService.js" "nodemon productMicroService.js" "nodemon cartMicroService.js"
@@ -68,25 +69,25 @@ The e-commerce platform is composed of the following microservices:
 
     Now , to run the user interface , follow these steps :
 
-    1. First , don't forget to import the database file "aos.sql" into your local server (Wamp,Xampp) phpmyadmin.
+    1.  Go to client folder :
 
-    2. Go to client folder :
-       ```bash
-       cd client
-       ```
-    3. Install the required dependencies:
+        ```bash
+        cd client
+        ```
 
-       ```bash
-       npm install
+    2.  Install the required dependencies:
 
-       ```
+        ```bash
+        npm install
 
-    4. Start the react app :
+        ```
 
-       ```bash
-       npm start
+    3.  Start the react app :
 
-       ```
+        ```bash
+        npm start
+
+        ```
 
 ## Usage
 
