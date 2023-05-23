@@ -20,7 +20,7 @@ The e-commerce platform is composed of the following microservices:
 
 1. User Microservice: Manages user accounts, including CRUD (Create, Read, Update, Delete) operations for user profiles.
 2. Product Microservice: Handles product management, including CRUD operations for product listings.
-3. Cart Microservice: Manages shopping carts, allowing users to add products to their cart,remove  and retrieve cart items.
+3. Cart Microservice: Manages shopping carts, allowing users to add products to their cart,remove and retrieve cart items.
 
 ## Technologies
 
@@ -51,7 +51,7 @@ The e-commerce platform is composed of the following microservices:
     ```bash
     npm install
     ```
-5.  Start all microservices:
+5.  Start the Api Gateway and all microservices:
 
     ```bash
     concurrently "nodemon gateway.js" "nodemon microservices/userMicroService.js" "nodemon microservices/productMicroService.js" "nodemon microservices/cartMicroService.js"
