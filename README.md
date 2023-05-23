@@ -18,7 +18,7 @@ This project is an e-commerce platform consisting of three microservices: User, 
 
 The e-commerce platform is composed of the following microservices:
 
-1. User Microservice: Manages user accounts, including CRUD (Create, Read, Update, Delete) operations for user profiles.
+1. User Microservice: Manages user accounts and user authentification , including CRUD (Create, Read, Update, Delete) operations for user's profile .
 2. Product Microservice: Handles product management, including CRUD operations for product listings.
 3. Cart Microservice: Manages shopping carts, allowing users to add products to their cart,remove and retrieve cart items.
 
