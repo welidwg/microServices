@@ -1,6 +1,5 @@
 syntax = "proto3";
 package product;
-
 message Product{
 int32 id=1;
 string title=2;
@@ -16,6 +15,14 @@ message GetProductRequest{
 
 message GetProductResponse{
     Product product=1;
+}
+message CheckInCartRequest{
+    int32 user_id=1;
+    int32 product_id=2;
+}
+
+message CheckInCartResponse{
+    bool check=1;
 }
 message GetAllProductRequest{
     string query=1;
@@ -63,4 +70,5 @@ rpc GetAllPorducts(GetAllProductRequest) returns (GetAllProductResponse);
 rpc SearchProduct(SearchProductRequest) returns (SearchProductResponse);
 rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse);
 rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse);
+rpc CheckInCart(CheckInCartRequest) returns (CheckInCartResponse);
 }

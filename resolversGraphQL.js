@@ -48,6 +48,20 @@ const resolvers = {
         });
       });
     },
+    checkInCart: (_, { user_id, product_id }) => {
+      return new Promise((resolve, reject) => {
+        client.checkInCart(
+          { user_id: user_id, product_id: product_id },
+          (err, response) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(response.check);
+            }
+          }
+        );
+      });
+    },
   },
   Mutation: {
     createProduct: (_, { title, description, price }) => {

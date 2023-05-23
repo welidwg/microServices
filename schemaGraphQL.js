@@ -11,6 +11,7 @@ const typeDefs = `#graphql
   type Query {
     product(id: Int!): Product
     products: [Product]
+    checkInCart(user_id:Int!,product_id:Int!):Boolean!
   }
 
 
@@ -18,6 +19,7 @@ const typeDefs = `#graphql
     createProduct(title: String!, description:String!,price:Float!): Product! 
     deleteProduct(id:Int!): String
     updateProduct(id:Int!,title:String!,description:String!,price:Float!):Product!
+    
   }
 `;
 

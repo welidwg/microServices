@@ -96,24 +96,27 @@ app.get("/api/users/search", (req, res) => {
 });
 
 //carts
-app.post("/api/cart/add", (req, res) => {
+app.post("/api/cart/add", authentication, (req, res) => {
   const data = req.body;
   clientCart.addToCart(data, (err, response) => {
     if (err) return res.status(500).send(err);
     res.json(response.cart);
   });
 });
-app.get("/api/cart/:user_id", (req, res) => {
+app.get("/api/cart/:user_id", authentication, (req, res) => {
   const user_id = req.params.user_id;
   clientCart.getCart({ user_id: user_id }, (err, response) => {
     if (err) return res.status(500).send(err);
     res.json(response.cart);
   });
 });
-app.get("/api/test", (req, res) => {
-  res.json({ message: "hello" });
+app.delete("/api/cart/delete/:cart_id", authentication, (req, res) => {
+  const cart_id = req.params.cart_id;
+  clientCart.deleteFromCart({ id: cart_id }, (err, response) => {
+    if (err) return res.status(500).send(err);
+    res.json(response.res);
+  });
 });
-
 const port = 3001;
 app.listen(port, () => {
   console.log(`API Gateway running on port ${port}`);

@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import { is_Auth, user } from "./constants";
 import MyProducts from "./pages/MyProducts";
 import Profile from "./pages/Profile";
+import Cart from "./pages/Cart";
 function App() {
   useEffect(() => {
     try {
@@ -29,7 +30,10 @@ function App() {
   return (
     <Container>
       {is_Auth && (
-       <Profile/>
+        <>
+          <Profile />
+          <Cart />
+        </>
       )}
       <Routes>
         <Route path="/" element={<Home />} />

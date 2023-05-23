@@ -10,3 +10,8 @@ export const ProductsQuery = gql`
     }
   }
 `;
+export const checkInCartQuery = gql`
+  query checkInCart($userId: Int!, $productId: Int!) {
+    checkInCart(user_id: $userId, product_id: $productId)
+  }
+`;

@@ -1,11 +1,13 @@
 syntax = "proto3";
 package cart;
+import "product.proto";
 
 message Cart{
 int32 id=1;
 int32 user_id=2;
 int32 product_id=3;
 double price=4;
+Product product=5;
 }
 
 
@@ -41,5 +43,5 @@ message AddToCartResponse{
 service CartService{
 rpc AddToCart(AddToCartRequest) returns (AddToCartResponse);
 rpc GetCart(GetCartRequest) returns (GetCartResponse);
-rpc DeleteFromCart(GetCartRequest) returns (GetCartResponse);
+rpc DeleteFromCart(DeleteFromCartRequest) returns (DeleteFromCartResponse);
 }

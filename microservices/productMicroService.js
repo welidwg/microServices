@@ -93,6 +93,18 @@ const productService = {
       }
     );
   },
+  checkInCart: (call, callback) => {
+    const { user_id, product_id } = call.request;
+    const query = "SELECT * from carts where user_id= ? and product_id=? ";
+    connection.query(query, [user_id, product_id], (err, results) => {
+      if (err) return callback(new Error(err));
+      if (results.length == 0) {
+        return callback(null, { check: false });
+      } else {
+        return callback(null, { check: true });
+      }
+    });
+  },
 };
 
 const server = new grpc.Server();

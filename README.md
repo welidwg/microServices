@@ -20,13 +20,14 @@ The e-commerce platform is composed of the following microservices:
 
 1. User Microservice: Manages user accounts, including CRUD (Create, Read, Update, Delete) operations for user profiles.
 2. Product Microservice: Handles product management, including CRUD operations for product listings.
-3. Cart Microservice: Manages shopping carts, allowing users to add products to their cart and retrieve cart items.
+3. Cart Microservice: Manages shopping carts, allowing users to add products to their cart,remove  and retrieve cart items.
 
 ## Technologies
 
 - gRPC: Used for efficient communication between microservices.
 - GraphQL: Implemented for flexible and efficient querying of data.
 - REST: RESTful APIs are used for exposing the services to external clients.
+- ReactJS in front-end.
 
 ## Getting Started
 
@@ -50,7 +51,7 @@ The e-commerce platform is composed of the following microservices:
     ```bash
     npm install
     ```
-5.  Start all microservice:
+5.  Start all microservices:
 
     ```bash
     concurrently "nodemon gateway.js" "nodemon microservices/userMicroService.js" "nodemon microservices/productMicroService.js" "nodemon microservices/cartMicroService.js"
@@ -94,7 +95,7 @@ The e-commerce platform is composed of the following microservices:
 
 - Interact with the User, Product, and Cart microservices using their respective gRPC, GraphQL, or RESTful API endpoints.
 - Use the provided API documentation to understand the available endpoints and their usage.
-- here is the admin credentials for the test :
+- Here is the admin credentials for the test :
   - email : test@gmail.com
   - password : 11223344
 

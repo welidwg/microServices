@@ -56,7 +56,14 @@ export default function SideBar(props) {
                 data-bs-toggle="offcanvas"
                 href="#profileOffCanvas"
               >
-                {user.nom} {user.prenom} {user.role == 0 ?? " | Admin"}
+                {user.nom} {user.prenom} {user.role == 0 ? " | Admin" : ""}
+              </button>
+              <button
+                className="mx-2 fw-bold btn  rounded-3 shadow"
+                data-bs-toggle="offcanvas"
+                href="#cartOffCanvas"
+              >
+                <i class="fal fa-shopping-cart"></i>
               </button>
               <button
                 onClick={Logout}
